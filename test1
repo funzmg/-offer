@@ -1,0 +1,29 @@
+package case3;
+
+public class find {
+	   public static void main(String[] args)
+	   {
+		   int a=125;
+		   int[][] b= {{1,2},{3,4}};
+		   boolean c = method01(a,b);
+		   System.out.println(c);
+	   }
+
+	   static boolean method01(int target, int [][] array) {
+	        int row=array.length;
+	        int col=array[0].length;
+	        for(int i=row-1;i>=0;)
+	        {
+	            for(int j=0;j<col;)
+	            {
+	                if(target==array[i][j])
+	                    return true;
+	                if(target<array[i][j])
+	                	{i--;break;}
+	                if(target>array[i][j])
+	                	{j++;continue;}
+	            }
+	        }
+	        return false;
+	    }
+	}
